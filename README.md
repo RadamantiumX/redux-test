@@ -72,3 +72,24 @@ Por ultimo, especificamos en cuales lenguajes de programacion vamos a utilizar B
 https://www.tremor.so/
 
 Es un pack de componentes para dar mejores estilos a los CHARTS, FORMS, DASHBOARDS, etc.
+
+Lo instalamos:
+```
+npm install @tremor/react
+```
+
+## TailwindCSS
+
+Junto con TREMO vamos a requerir de TAILWINDCSS: 
+
+```
+npm i tailwindcss postcss autoprefixer -D
+```
+Lo instalamos como una dependencia de desarrollo. Junto con esto creamos los archivos de configuracion.
+
+```
+npx tailwindcss init -p
+```
+
+Esto nos creamos los archivos *tailwind.config.js* y el *postcss.config.js*.
+
