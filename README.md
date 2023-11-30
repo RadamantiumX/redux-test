@@ -93,3 +93,55 @@ npx tailwindcss init -p
 
 Esto nos creamos los archivos *tailwind.config.js* y el *postcss.config.js*.
 
+
+## Redux
+
+Se utilizará la forma mas recomendada de utilizar REDUX, que es **REDUX TOOLKIT** 
+
+En el archivo "main.tsx", ponemos el PROVIDER de REDUX junto con la STORE: 
+
+```
+import { store } from './store/index.ts'
+import { Provider } from 'react-redux'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+```
+
+Envolvemos nuestra aplicación con REDUX. Para poder tener un orden con nuestros datos vamos a crear un SLICE con c/u de ellos.
+
+## Screaming Architecture
+
+A la hora de ordenar los archivos y carpetas, lo mejor sería ver las referencias de la *screaming architecture* en donde ponemos el negocio por delante de todo, y no al revés.
+https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html
+
+## Middleware
+
+Es cierta ejecucion ejecutandose en mitad de otra. Es casi similar al PROXY.
+Siempre vamos a ejecutar una funcion entre medio para ir al siguiente paso, ya sea una ACTION, a la STORE, etc.
+Cada metodo q se ejecuta aqui, lo hace en momento distinto, es por eso que necesita las 3 funciones de forma separada.
+
+```
+const exampleeMiddleware = (store) => (next) => (action) => {
+	// Do something before
+    next(action)
+    // Do something after
+}
+```
+
+Una vez hecho esto, se lo tenemos que pasar a la STORE, en donde puede ser uno, o mas, MIDDLEWARE que le podemos pasar.
+
+Tenemos la posibiliad de ejecutar algo antes o despues de una ACTION.
+
+![Alt text](./src/assets/middelware.jpg)
+
+
+## Sonner
+
+Podemos utilizar esta libreria para gestionar las notificaciones, lo instalamos con el siguiente comando: 
+
+```
+npm install sonner
+```
