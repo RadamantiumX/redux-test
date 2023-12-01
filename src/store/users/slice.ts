@@ -72,6 +72,17 @@ export const usersSlice = createSlice({
 			// Devuelve un nuevo estado
 			return state.filter((user) => user.id !== id); // Filtramos ese estado: los usuario q sean diferentes a esa ID que nos pasaron
 		},
+		// Si ya hemos hecho un ROLLBACK de un determinado USER
+		// Tenemos que evitar meterlo por duplicado
+		rollbackUser: (state, action: PayloadAction<UserWithId>) => {
+			const isUserAlreadyDefined = state.find(
+				(user) => user.id === action.payload.id,
+			);
+			if (!isUserAlreadyDefined) {
+				// Si NO esta definido
+				return [...state, action.payload]; // Metemos el usuario
+			}
+		},
 	},
 });
 
@@ -79,4 +90,4 @@ export const usersSlice = createSlice({
 export default usersSlice.reducer;
 
 // Exportamos esta accion
-export const { addNewUser, deleteUserById } = usersSlice.actions;
+export const { addNewUser, deleteUserById, rollbackUser } = usersSlice.actions;

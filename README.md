@@ -1,4 +1,8 @@
-# Librerias a utilizar en este proyecto
+# REDUX TOOLKIT
+
+Esta es la forma predeterminada de utilizar REDUX y su control de los estados.
+
+## Librerias a utilizar en este proyecto
 
 En vez de utilizar el clásico LINTER, en esta ocasion utilizaremos BIOME, quienes continuan con el legado de ROME (ya sin soporte).
 
@@ -145,3 +149,8 @@ Podemos utilizar esta libreria para gestionar las notificaciones, lo instalamos 
 ```
 npm install sonner
 ```
+
+## Rollback STATE
+
+Esto nos permite recuperar un estado anterior y volver a colocarlo en caso de que algo haya salido mal.
+En la UI podemos ver reflejado el cambio que ocurrio con el evento, pero si hay un error de cualquier tipo, ya sea en la base de datos por ejemplo, el estado retrocede y vuelve a como esataba antes. En ese caso podemos mostrar un error, o simplemente como vuelve ese cambio a como estaba.
