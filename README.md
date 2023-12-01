@@ -1,4 +1,4 @@
-# REDUX TOOLKIT
+# REDUX TOOLKIT 🛠
 
 Esta es la forma predeterminada de utilizar REDUX y su control de los estados.
 
