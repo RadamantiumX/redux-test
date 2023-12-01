@@ -154,3 +154,12 @@ npm install sonner
 
 Esto nos permite recuperar un estado anterior y volver a colocarlo en caso de que algo haya salido mal.
 En la UI podemos ver reflejado el cambio que ocurrio con el evento, pero si hay un error de cualquier tipo, ya sea en la base de datos por ejemplo, el estado retrocede y vuelve a como esataba antes. En ese caso podemos mostrar un error, o simplemente como vuelve ese cambio a como estaba.
+
+## *Conclusiones finales*
+
+Con REDUX TOOLKIT no tenemos que crear un nuevo estado, solo modificamos o mutamos el estado original.
+Todo esto gracias a "*immer*", podemos ver mas en la documentacion.
+https://redux-toolkit.js.org/usage/immer-reducers
+
+Como punto en contra, consume mas recursos de los que deberia en un proyecto, el peso de esta libreria es aun mayor que el propio REDUX TOOLKIT.
+

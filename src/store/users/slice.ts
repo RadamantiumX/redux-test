@@ -64,7 +64,8 @@ export const usersSlice = createSlice({
 		// Tipamos para q la ACTION sea del TIPO que corresponde, un STRING
 		addNewUser: (state, action: PayloadAction<User>) => {
 			const id = crypto.randomUUID();
-			return [...state, { id, ...action.payload }]; // Creamos un nuevo estado a partir del anterior
+			state.push({ id, ...action.payload }); // Mutamos el estado
+			// return [...state, { id, ...action.payload }]; // Creamos un nuevo estado a partir del anterior
 			// Con la ACTION añadimos un nuevo USER junto con la ID creada (a partir de generla con la UUID)
 		},
 		deleteUserById: (state, action: PayloadAction<UserId>) => {
@@ -80,7 +81,7 @@ export const usersSlice = createSlice({
 			);
 			if (!isUserAlreadyDefined) {
 				// Si NO esta definido
-				return [...state, action.payload]; // Metemos el usuario
+				state.push(action.payload); // Mutamos el estado
 			}
 		},
 	},
