@@ -6,7 +6,7 @@ const DEFAULT_STATE = [
 		id: "1",
 		name: "Pippin",
 		email: "pippin-2-bf@shire.com",
-		github: "pippin-thehobbit",
+		github: "pippin-thehobbit-2",
 	},
 	{
 		id: "2",
